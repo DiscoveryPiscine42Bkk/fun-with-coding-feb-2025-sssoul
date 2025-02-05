@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Table</title>
+    <style>
+        /* Reset body margin and padding */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Make the table fill the entire page and adjust size */
+        table {
+            width: 90%; /* Responsive width */
+            height: 80%; /* Responsive height */
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style for table cells */
+        td {
+            text-align: center;
+            font-size: 2vw; /* Responsive font size */
+            font-weight: bold;
+            border: 1px solid black;
+        }
+
+        /* Cell-specific colors */
+        .first-cell {
+            background-color: #b6d7a8; /* Light green */
+        }
+        .second-cell {
+            background-color: #f4cccc; /* Light pink */
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="first-cell">First cell</td>
+            <td class="second-cell">Second cell</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f4f6;
+        }
+
+        .calculator {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+        }
+
+        .input-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .input-row input,
+        .input-row select {
+            margin: 0 5px;
+            padding: 10px;
+            font-size: 16px;
+            width: 30%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .calculator button {
+            margin-top: 20px;
+            padding: 10px 0;
+            font-size: 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%; /* ทำให้ปุ่มมีความกว้างเต็มการ์ด */
+        }
+
+        .calculator button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Basic Calculator</h2>
+        <div class="input-row">
+            <input type="number" id="leftValue" placeholder="Left value" min="0">
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="number" id="rightValue" placeholder="Right value" min="0">
+        </div>
+        <button id="calculate">Try me!</button>
+    </div>
+
+    <script>
+        document.getElementById('calculate').addEventListener('click', function () {
+            const leftValue = parseInt(document.getElementById('leftValue').value);
+            const operator = document.getElementById('operator').value;
+            const rightValue = parseInt(document.getElementById('rightValue').value);
+
+            if (isNaN(leftValue) || isNaN(rightValue) || leftValue < 0 || rightValue < 0) {
+                alert('Error :(');
+                console.error('Error :(');
+                return;
+            }
+
+            let result;
+            try {
+                switch (operator) {
+                    case '+':
+                        result = leftValue + rightValue;
+                        break;
+                    case '-':
+                        result = leftValue - rightValue;
+                        break;
+                    case '*':
+                        result = leftValue * rightValue;
+                        break;
+                    case '/':
+                    case '%':
+                        if (rightValue === 0) {
+                            alert("It's over 9000!");
+                            console.error("It's over 9000!");
+                            return;
+                        }
+                        result = operator === '/' ? leftValue / rightValue : leftValue % rightValue;
+                        break;
+                    default:
+                        throw new Error('Invalid operator');
+                }
+
+                alert(`Result: ${result}`);
+                console.log(`Result: ${result}`);
+            } catch (error) {
+                alert('Error :(');
+                console.error('Error :(');
+            }
+        });
+
+        setInterval(() => {
+            alert('Please, use me...');
+        }, 30000);
+    </script>
+</body>
+</html>

@@ -1,35 +1,30 @@
-/* Reset body margin and padding */
-body {
+/* ทำให้ตารางครอบคลุมหน้าจอทั้งหมด */
+html, body {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
+    height: 100%;
 }
 
-/* Make the table fill the entire page and adjust size */
 table {
-    width: 90%; /* Responsive width */
-    height: 80%; /* Responsive height */
+    width: 100%;
+    height: 100%;
     border-collapse: collapse;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Style for table cells */
 td {
+    height: auto;
     text-align: center;
-    font-size: 2vw; /* Responsive font size */
+    font-size: 2vw; /* ขนาดตัวอักษรที่ปรับตามหน้าจอ */
+    font-family: Arial, sans-serif;
     font-weight: bold;
     border: 1px solid black;
+    word-wrap: break-word; /* ทำให้ข้อความตัดบรรทัดในเซลล์ */
 }
 
-/* Cell-specific colors */
 .first-cell {
-    background-color: #b6d7a8; /* Light green */
+    background-color: #b6d7a8; /* สีเขียวอ่อน */
 }
+
 .second-cell {
-    background-color: #f4cccc; /* Light pink */
+    background-color: #f4cccc; /* สีชมพูอ่อน */
 }

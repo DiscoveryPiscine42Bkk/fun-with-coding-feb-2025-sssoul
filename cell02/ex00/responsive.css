@@ -1,4 +1,4 @@
-/* ทำให้ตารางครอบคลุมหน้าจอทั้งหมด */
+
 html, body {
     margin: 0;
     padding: 0;
@@ -14,17 +14,17 @@ table {
 td {
     height: auto;
     text-align: center;
-    font-size: 2vw; /* ขนาดตัวอักษรที่ปรับตามหน้าจอ */
+    font-size: 2vw; 
     font-family: Arial, sans-serif;
     font-weight: bold;
     border: 1px solid black;
-    word-wrap: break-word; /* ทำให้ข้อความตัดบรรทัดในเซลล์ */
+    word-wrap: break-word; 
 }
 
 .first-cell {
-    background-color: #b6d7a8; /* สีเขียวอ่อน */
+    background-color: #b6d7a8; 
 }
 
 .second-cell {
-    background-color: #f4cccc; /* สีชมพูอ่อน */
+    background-color: #f4cccc; 
 }
